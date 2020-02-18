@@ -11,11 +11,11 @@ class LinkedList:
     def append(self, data):
         if self.head == None:
             self.head = Node(data)
-            return
-        current = self.head
-        while current.next != None:
-            current = current.next
-        current.next = Node(data)
+        else:
+            current = self.head
+            while current.next != None:
+                current = current.next
+            current.next = Node(data)
 
     def prepend(self, data):
         newHead = Node(data)
@@ -28,6 +28,7 @@ class LinkedList:
             return
         if self.head.data == data:
             self.head = self.head.next
+            return
         current = self.head
         while current.next != None:
             if current.next.data == data:

@@ -31,7 +31,7 @@ class HashTable:
         key = self.keys[name]
         person = self.list[key]
         while name != person.name:
-            if self.list[key] == None:
+            if person == None:
                 print(name, " not found")
                 return False
             person = person.next
