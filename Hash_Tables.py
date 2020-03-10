@@ -1,9 +1,12 @@
 import random
+
+
 class Node:
-    def __init__(self, name, last_name="" ):
+    def __init__(self, name, last_name=""):
         self.name = name
         self.last_name = last_name
         self.next = None
+
 
 class HashTable:
     def __init__(self):
@@ -19,7 +22,7 @@ class HashTable:
         else:
             self.keys[name] = random.randint(0, 5)
             self.list[self.keys[name]].next = person
-    
+
     def printList(self):
         for person in self.list:
             print(person.name, person.last_name)
@@ -38,7 +41,8 @@ class HashTable:
         print(person.name, person.last_name)
         return True
 
-def main():   
+
+def main():
     my_hash = HashTable()
     my_hash.printList()
     my_hash.add("Fernando", "Alonso")
@@ -53,8 +57,6 @@ def main():
     my_hash.find("Rick")
     my_hash.find("Fernando")
 
+
 if __name__ == '__main__':
     main()
-
-
-

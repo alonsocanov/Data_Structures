@@ -4,13 +4,14 @@ class Node:
         self.next = None
         self.previous = None
 
+
 class Stack:
     def __init__(self):
         self.head = None
         self.tail = None
 
     def add(self, data):
-        if self.head == None or self.tail == None:
+        if self.head is None or self.tail is None:
             self.head = Node(data)
             self.tail = self.head
         else:
@@ -20,7 +21,7 @@ class Stack:
             self.tail = new_node
 
     def pop(self):
-        if self.head == None:
+        if self.head is None:
             return None
         out = self.head
         self.head = out.previous
@@ -28,9 +29,10 @@ class Stack:
 
     def printStack(self):
         temp = self.tail
-        while temp != None:
+        while temp is not None:
             print(temp.data)
             temp = temp.next
+
 
 def main():
     my_stack = Stack()
@@ -42,6 +44,7 @@ def main():
     print("Pulling")
     my_stack.pop()
     my_stack.printStack()
+
 
 if __name__ == '__main__':
     main()

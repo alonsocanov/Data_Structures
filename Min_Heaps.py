@@ -1,24 +1,32 @@
 class MinIntHeap:
     def __init__(self):
         self.items = []
-        self.size = 0 
+        self.size = 0
 
     def getLeftChildIndex(self, parent_index):
         return 2 * parent_index + 1
+
     def getRightChildIndex(self, parent_index):
         return 2 * parent_index + 2
+
     def getParentIndex(self, child_index):
         return int((child_index - 1) / 2)
+
     def hasLeftChild(self, index):
         return self.getLeftChildIndex(index) < self.size
+
     def hasRightChild(self, index):
         return self.getRightChildIndex(index) < self.size
+
     def hasParent(self, index):
         return self.getParentIndex(index) >= 0
+
     def leftChild(self, index):
         return self.items[self.getLeftChildIndex(index)]
+
     def leftRight(self, index):
         return self.items[self.getRightChildIndex(index)]
+
     def parent(self, index):
         return self.items[self.getParentIndex(index)]
 
@@ -30,7 +38,7 @@ class MinIntHeap:
     def peek(self):
         if self.size == 0:
             return "Not possible"
-        return items[0]
+        return self.items[0]
 
     def heapifyUp(self):
         index = self.size - 1
@@ -64,6 +72,7 @@ class MinIntHeap:
         self.size += 1
         self.heapifyUp()
 
+
 def main():
     my_heaps = MinIntHeap()
     my_heaps.add(10)
@@ -73,6 +82,7 @@ def main():
     my_heaps.add(8)
     my_heaps.add(25)
     print(my_heaps.items)
+
 
 if __name__ == '__main__':
     main()
